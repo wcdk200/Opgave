@@ -17,4 +17,5 @@ elif kara > -3:
     print("Din alfabet karaktere er Fx")
 elif kara == -3: 
     print("Din alfabet karaktere er F")
-    
+elif kara < -3: 
+    print("Du er Fucked")
