@@ -1,5 +1,7 @@
-kara=input("Skriv din danske karaktere her: ")
+karaa=input("Skriv din danske karaktere her: ")
+kara=float(karaa)
 print("din danske karaktere er: ", kara)
+
 #Det pis virker ikke. Så dårligt eksempel fra mig
 if kara > 10: 
     print("Din alfabet karaktere er A")
@@ -12,4 +14,7 @@ elif kara > 2:
 elif kara > 0: 
     print("Din alfabet karaktere er E")
 elif kara > -3: 
+    print("Din alfabet karaktere er Fx")
+elif kara == -3: 
     print("Din alfabet karaktere er F")
+    
