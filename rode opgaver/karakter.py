@@ -2,7 +2,7 @@ karaa=input("Skriv din danske karaktere her: ")
 kara=float(karaa)
 print("din danske karaktere er: ", kara)
 
-#Det pis virker ikke. Så dårligt eksempel fra mig
+#Lortet vírker bare huskk at lave float
 if kara > 10: 
     print("Din alfabet karaktere er A")
 elif kara > 7: 
