@@ -15,7 +15,12 @@ en exception
 """
 
 # Beder brugeren om input om hvor mange elementer listen skal have
-antalElementer = int(input("Hvor mange elementer skal listen have? "))
+while True:
+    try:
+        antalElementer = int(input("Hvor mange elementer skal listen have? "))
+        break
+    except ValueError:
+        print("Skriv venlist et tal din dompap")
 
 elementListe = []
 
@@ -34,5 +39,9 @@ while True:
         element = elementListe[int(elementIndeks)]
     except IndexError:
         print("Indeks " + str(elementIndeks) + " er ikke i listen.")
+    except ValueError:
+        print("Du skal stadig fucking bare skrive q eller et tal imellem 0 og " + str(antalElementer))
+    except TypeError:
+        print("Du skal stadig fucking bare skrive q eller et tal imellem 0 og " + antalElementer)
     else:
         print("Element på plads " + str(elementIndeks) + " i listen er " + str(elementListe[int(elementIndeks)]))
