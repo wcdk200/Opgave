@@ -1,4 +1,3 @@
-pro = ["python, java, c++, html"]
+li = [*range(3 , 31 , 3)]
 
-for x in range(len(pro)):
-    print(pro[x])
+print(' '.join(map(str, li)))
