@@ -40,8 +40,6 @@ while True:
     except IndexError:
         print("Indeks " + str(elementIndeks) + " er ikke i listen.")
     except ValueError:
-        print("Du skal stadig fucking bare skrive q eller et tal imellem 0 og " + str(antalElementer))
-    except TypeError:
-        print("Du skal stadig fucking bare skrive q eller et tal imellem 0 og " + antalElementer)
+        print("Din kræft idiot du skal bare skrive q for at stoppe eller et tal imellem 0 og " + str(antalElementer))
     else:
         print("Element på plads " + str(elementIndeks) + " i listen er " + str(elementListe[int(elementIndeks)]))
