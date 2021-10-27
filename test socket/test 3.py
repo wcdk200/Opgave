@@ -25,25 +25,26 @@ while gameLoop:
         if event.type == pygame.QUIT:
             gameLoop = False
             
-        if event.type == pygame.K_w and event.key == pygame.K_q:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_q:
             data = "17"
             nyt_data = data.encode("UTF-8")
             skt.sendall(nyt_data)
             
-        if event.type == pygame.K_s and event.key == pygame.K_w:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_w:
             data = "18"
             nyt_data = data.encode("UTF-8")
             skt.sendall(nyt_data)
             
-        if event.type == pygame.K_a and event.key == pygame.K_e:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_e:
             data = "22"
             nyt_data = data.encode("UTF-8")
             skt.sendall(nyt_data)
             
-        if event.type == pygame.K_d and event.key == pygame.K_r:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
             data = "23"
             nyt_data = data.encode("UTF-8")
             skt.sendall(nyt_data)
+            skt.sendto(nyt_data, (host, port))
             
         if event.type == pygame.K_q and event.key == pygame.K_t:
             data = "24"
