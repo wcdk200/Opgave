@@ -3,7 +3,7 @@ import pygame
 import time
 
 pygame.init()
-screen = pygame.display.set_mode((3840, 2160))
+screen = pygame.display.set_mode((640, 360))
 pygame.display.set_caption("Motorstyring")
 
 
@@ -16,7 +16,7 @@ skt = socket.socket()
 host = "192.168.1.249" # Ip-addressen for Raspberry Pi
 port = 4200
 
-winn = pygame.image.load("sjovTing.png")
+#winn = pygame.image.load("bigGAl.png")
 
 skt.connect((host, port))
 
@@ -65,7 +65,8 @@ while gameLoop:
             nyt_data = data.encode("UTF-8")
             skt.sendall(nyt_data)
 
-        screen.blit(winn, [0, 0])
+        if 
+    #screen.blit(winn, [0, 0])
 
     pygame.display.flip()
 skt.close()

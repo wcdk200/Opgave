@@ -2,7 +2,7 @@ import pygame
 import time
 
 pygame.init()
-screen = pygame.display.set_mode((3840, 2160))
+screen = pygame.display.set_mode((640, 360))
 pygame.display.set_caption("Motorstyring")
 
 
@@ -10,7 +10,7 @@ gameLoop = True
 
 print("Kører klienten\n")
 
-winn = pygame.image.load("sjovTing.png")
+#winn = pygame.image.load("sjovTing.png")
 
 while gameLoop:
     for event in pygame.event.get():
@@ -49,6 +49,6 @@ while gameLoop:
             data = "15"
             nyt_data = data.encode("UTF-8")
 
-        screen.blit(winn, [0, 0])
+        #screen.blit(winn, [0, 0])
 
     pygame.display.flip()
