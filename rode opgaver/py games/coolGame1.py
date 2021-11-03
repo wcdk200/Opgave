@@ -30,7 +30,7 @@ while run:
     if keys[pygame.K_DOWN] and y<500-height:
         y += vel
     
-    win.fill((175, 200, 50))
+    win.fill((175, 200, 200))
     pygame.draw.rect(win, (255, 0, 0), (x, y, width, height))
     pygame.display.update() 
 
