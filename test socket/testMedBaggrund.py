@@ -65,7 +65,6 @@ while gameLoop:
             nyt_data = data.encode("UTF-8")
             skt.sendall(nyt_data)
 
-        if 
     #screen.blit(winn, [0, 0])
 
     pygame.display.flip()
