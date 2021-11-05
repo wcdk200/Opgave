@@ -19,13 +19,13 @@ print("5\n")
 
 FPS = 60 #bestemmer maks fps. bare så det ikke ender med at lagge noget ud.
 
-"""skt = socket.socket() #Forbinder til Rasp... Husk at tjekke om ip'en og porten er den rigtige
+skt = socket.socket() #Forbinder til Rasp... Husk at tjekke om ip'en og porten er den rigtige
 
-host = "192.168.1.249" # Ip-addressen for Raspberry Pi
+host = "192.168.1.249" #Ip-addressen for Raspberry Pi
 port = 4200
 
 skt.connect((host, port))
-"""
+
 def draw_windue(styr): #Her er noget styring til skærmen
     WIN.fill(skærmfarve) #Det her er baggrundsfarven
     WIN.blit(tar, (styr.x, styr.y)) #Bare et billede af et rat 
@@ -43,22 +43,42 @@ def main(): #Det vigtige kode er her
                 gameLoop = False
             elif event.type == pygame.KEYDOWN:
                 keys = pygame.key.get_pressed() #Den her siger hvad der skal gøres, finds forskellige taster bliver trykket på
-                if keys[pygame.K_w]:
-                    print("12")
-                elif keys[pygame.K_q]:
-                    print("11")
+                if keys[pygame.K_w]: #Fuldskrue frem ad
+                    data = "100,100"
+                    nyt_data = data.encode("UTF-8")
+                    skt.sendall(nyt_data)
+
+                elif keys[pygame.K_q]: #Hvis vi skal have blink lys eller bare bruge q og e til noget
+                    data = "lysV"
+                    nyt_data = data.encode("UTF-8")
+                    skt.sendall(nyt_data)
                 elif keys[pygame.K_e]:
-                    print("13")
-                elif keys[pygame.K_r]:
-                    print("14")
-                elif keys[pygame.K_a]:
-                    print("20")
-                elif keys[pygame.K_s]:
-                    print("21")
-                elif keys[pygame.K_d]:
-                    print("23")
-                elif keys[pygame.K_f]:
-                    print("24")
+                    data = "lysH"
+                    nyt_data = data.encode("UTF-8")
+                    skt.sendall(nyt_data)
+
+                elif keys[pygame.K_a]: #Her burde den dreje til venstre
+                    data = "0,100"
+                    nyt_data = data.encode("UTF-8")
+                    skt.sendall(nyt_data)
+                elif keys[pygame.K_w and pygame.K_a]:
+                    data = "80,100"
+                    nyt_data = data.encode("UTF-8")
+                    skt.sendall(nyt_data)
+
+                elif keys[pygame.K_s]: #Fuldstop ind til videre -tror jeg
+                    data = "0,0"
+                    nyt_data = data.encode("UTF-8")
+                    skt.sendall(nyt_data)
+
+                elif keys[pygame.K_d]: #Her dreje til højre man gør
+                    data = "100,0"
+                    nyt_data = data.encode("UTF-8")
+                    skt.sendall(nyt_data)
+                elif keys[pygame.K_w and pygame.K_d]:
+                    data = "100,80"
+                    nyt_data = data.encode("UTF-8")
+                    skt.sendall(nyt_data)
 
         draw_windue(styr)
     pygame.quit()
