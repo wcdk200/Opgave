@@ -25,7 +25,7 @@ host = "192.168.1.249" #Ip-addressen for Raspberry Pi
 port = 4200 #og ja det her er porten
 
 skt.connect((host, port))
-#
+
 def draw_windue(styr): #Her er noget styring til skærmen
     rotedede = pygame.transform.rotate(tar, angle) #Det her får billedet til at roterer
     WIN.fill(skærmfarve) #Det her er baggrundsfarven
