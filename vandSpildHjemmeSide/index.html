@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vandmåler</title>
+</head>
+<body>
+
+<h1>velkommen til din vandmåler</h1>
+<p>Her kan du se vad temeraturen påp dit vandrør er og om vi tror der er vandspild</p>
+<script>
+function readTextFile("file:///inputfile.txt");
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+    </script>
+
+</body>
+</html>
