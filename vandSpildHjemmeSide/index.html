@@ -1,30 +1,20 @@
 <!DOCTYPE html>
-<html>
-  
+<meta charset="utf-8" /> 
+<meta name="description" content="Beskrivelse af side" />
+<style>
+    body {text-align: center;}
+    body {background-color: rgb(150, 187, 224)}
+    
+</style>
+<html> 
 <head>
-    <title>Read Text File</title>
+    <title>Vandmåler</title>
 </head>
-  
 <body>
-    <input type="file" name="inputfile"
-            id="inputfile">
-    <br>
-   
-    <pre id="output"></pre>
-      
-    <script type="text/javascript">
-        document.getElementById('inputfile')
-            .addEventListener('change', function() {
-              
-            var fr=new FileReader();
-            fr.onload=function(){
-                document.getElementById('output')
-                        .textContent=fr.result;
-            }
-              
-            fr.readAsText(this.files[0]);
-        })
-    </script>
+    
+    <h1 style="color:blue;">Din vandmåler</h1>
+    <p>Her kan du se vad temeraturen påp dit vandrør er og om vi tror der er vandspild</p>
+    <object data="inputfile.txt" height="900" width="7%"></object>
+
 </body>
-  
 </html>
