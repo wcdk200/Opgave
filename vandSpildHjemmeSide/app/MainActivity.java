@@ -1,7 +1,5 @@
 package com.example.vandmler2000;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
@@ -21,14 +19,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //CustomWebViewClient client = new CustomWebViewClient(activity:this);
         webView = findViewById(R.id.webWiew);
-        //webView = setWebViewClient(client);
+        
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("http://192.168.1.221:8000");
+        webView.loadUrl("http://192.168.1.221:8000"); //Her fortæller vi hvilken hjemmeside den skal bruge
     }
-
-    @Override
+    
+    @Override //Her lave vi tilbage knappen, så man kan bruge den i appen
     public boolean onKeyDown(int keyCode, KeyEvent event){
         if(keyCode == KeyEvent.KEYCODE_BACK && this.webView.canGoBack()) {
             this.webView.goBack();
