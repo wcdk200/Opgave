@@ -1,15 +1,21 @@
 import platform
 import subprocess
 
-def myping(host):
-    parameter = '-n' if platform.system().lower()=='windows' else '-c'
+run = 0
 
-    command = ['ping', parameter, '1', host]
-    response = subprocess.call(command)
+while run <= 1:
+    def myping(host):
+        global run
+        parameter = '-n' if platform.system().lower()=='windows' else '-c'
 
-    if response == 0:
-        return True
-    else:
-        return False
-        
-print(myping("8.8.8.8"))
+        command = ['ping', parameter, '1', host]
+        response = subprocess.call(command)
+
+        if response == 0:
+            run = run + 1
+            return True
+        else:
+            return False
+
+    print(myping("8.8.8.8"))
+
