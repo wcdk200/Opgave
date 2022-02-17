@@ -1,4 +1,4 @@
-tal = 3
+tal = 0
 
 while True:
     if tal == 66:
