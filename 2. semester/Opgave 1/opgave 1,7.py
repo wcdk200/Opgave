@@ -1,6 +1,3 @@
-import string
-
-
 def add1(x):
     x = x + 1
     print(x) 
