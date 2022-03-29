@@ -5,5 +5,17 @@ class Slik():
         self.pris = pris
         self.plads = plads
 
+class Bar():
+    def __init__(self, bar, pris, plads):
+        self.bar = bar
+        self.pris = pris
+        self.plads = plads
+
+class Drikkevare():
+    def __init__(self, drik, pris, plads):
+        self.drikkevare = drik
+        self.pris = pris
+        self.plads = plads
+
 
     
