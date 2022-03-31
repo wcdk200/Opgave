@@ -19,8 +19,13 @@ async def producer(queue):
 async def printer(queue):
     while True:
         number = await queue.get()
+        if number == end_number:
+            break
         print(number)
-        break
+        file = open('tekst7.txt', "w")
+        file.write('Welcome to Geeks for Geeks')
+        file.close()
+        await asyncio.sleep(random.uniform(0.1, 1.0))
 
 
 async def consumer(queue):
@@ -36,6 +41,6 @@ async def consumer(queue):
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     queue = asyncio.Queue()
-    loop.run_until_complete(asyncio.gather(producer(queue), consumer(queue)))
+    loop.run_until_complete(asyncio.gather(producer(queue),printer(queue), consumer(queue)))
     loop.stop()
     loop.close()
